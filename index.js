@@ -16,7 +16,7 @@ $('.form-login').submit(function( event ){
         $.ajax({
             method: 'post',
             data: user,
-            url: 'http://localhost:4000/authenticate',
+            url: 'https://api-senai5s.herokuapp.com/authenticate',
             success(data){
                 if(data.isAuth)
                     window.location.href = 'https://web-senai5s.herokuapp.com/auth?token=' + data.token;
