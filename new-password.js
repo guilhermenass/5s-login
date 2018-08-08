@@ -19,11 +19,11 @@ function saveNewPassword(event){
             password: $(".form-new-password").val(),
             id: userId
         },
-        url: 'http://localhost:4000/updatePassword/' + userId,
+        url: 'https://api-senai5s.herokuapp.com/' + userId,
         success: function(data, status) {
             swal('', data.message, data.type)
             .then(() => {
-                window.location.href = "http://localhost:8080";
+                window.location.href = "https://login-senai5s.herokuapp.com";
             })
         },
         error: function(data, status) {
