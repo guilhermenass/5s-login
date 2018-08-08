@@ -16,13 +16,12 @@ $('.form-first-access').submit(function( event ){
     $.ajax({
         method: 'post',
         data: user,
-        url: 'http://localhost:4000/firstAccess',
+        url: 'https://api-senai5s.herokuapp.com/firstAccess',
         success(data){
             swal("", data.message, data.type)
                 .then((value) => {
-                window.location.href = 'http://localhost:8080';
+                window.location.href = 'https://login-senai5s.herokuapp.com';
             });
-            //swal("", data.message, data.type),
         },
         error(data){
             swal("", data.message, data.type);
