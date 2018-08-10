@@ -40,7 +40,7 @@ $('.form-login').submit(function( event ){
                     window.location.href = 'http://localhost:8080/first-access.html?id='+data.id;
             },
             error(data){
-                alert(data.responseText);
+                swal('', data.responseText, 'warning');
             }
         });
     }
