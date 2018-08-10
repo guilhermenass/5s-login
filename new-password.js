@@ -19,7 +19,7 @@ function saveNewPassword(event){
             password: $(".form-new-password").val(),
             id: userId
         },
-        url: 'http://localhost:4000/' + userId,
+        url: 'http://localhost:4000/updatePassword/' + userId,
         success: function(data, status) {
             swal('', data.message, data.type)
             .then(() => {
