@@ -16,11 +16,11 @@ $('.form-first-access').submit(function( event ){
     $.ajax({
         method: 'post',
         data: user,
-        url: 'https://api-senai5s.herokuapp.com/firstAccess',
+        url: 'https://api-5s.herokuapp.com/firstAccess',
         success(data){
             swal("", data.message, data.type)
                 .then((value) => {
-                window.location.href = 'https://login-senai5s.herokuapp.com';
+                window.location.href = 'https://login-5s.herokuapp.com';
             });
         },
         error(data){
