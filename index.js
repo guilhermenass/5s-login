@@ -16,10 +16,10 @@ $('.form-login').submit(function( event ){
         $.ajax({
             method: 'post',
             data: user,
-            url: 'https://api-senai5s.herokuapp.com/authenticate',
+            url: 'http://localhost:4000/authenticate',
             success(data){
                 if(data.isAuth)
-                    window.location.href = 'https://web-senai5s.herokuapp.com/auth?token=' + data.token;
+                    window.location.href = 'http://localhost:4200/auth?token=' + data.token;
             },
             error(data){
                 swal('', data.responseText, 'error');
@@ -34,10 +34,10 @@ $('.form-login').submit(function( event ){
         $.ajax({
             method: 'post',
             data: user,
-            url: 'https://api-senai5s.herokuapp.com/validateFirstAccess',
+            url: 'http://localhost:4000/validateFirstAccess',
             success(data){
                 if(data.isFirstAccess)
-                    window.location.href = 'https://login-senai5s.herokuapp.com/first-access.html?id='+data.id;
+                    window.location.href = 'http://localhost:8080/first-access.html?id='+data.id;
             },
             error(data){
                 swal('', data.responseText, 'warning');
