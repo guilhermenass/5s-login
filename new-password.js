@@ -29,7 +29,7 @@ function saveNewPassword(event){
             if(data.status === 401)
                 swal(
                     "",
-                    "Ocorreu um erro ao tentar salvar a nova senha!",
+                    "O tempo para recuperar a senha, expirou. Tente realizar o procedimento novamente!",
                     "error"
                 );
         },
