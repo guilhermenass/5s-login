@@ -4,7 +4,6 @@ function saveNewPassword(event){
     let params = new URLSearchParams(document.location.search.substring(1));
     let userId = Number(params.get("id"));
     let token = params.get("token");
-
     localStorage.clear();
     localStorage.setItem('token', token);
 
