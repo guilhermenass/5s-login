@@ -13,10 +13,10 @@ $('.form-login').submit(function( event ){
         $.ajax({
             method: 'post',
             data: user,
-            url: 'http://localhost:4000/authenticate',
+            url: 'https://api-5s.herokuapp.com/authenticate',
             success(data){
                 if(data.isAuth)
-                    window.location.href = 'http://localhost:4200/auth?token=' + data.token;
+                    window.location.href = 'https://web-5s.herokuapp.com/auth?token=' + data.token;
             },
             error(data){
                 swal('', data.responseText, 'error');

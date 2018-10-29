@@ -6,7 +6,7 @@ function verifyEmail(event) {
         $.ajax({
             method: 'get',
             data: {email: email},
-            url: 'http://localhost:4000/verifyEmail',
+            url: 'https://api-5s.herokuapp.com/verifyEmail',
             success(data){
                 if(data)
                     swal("", data.msg, "success");
