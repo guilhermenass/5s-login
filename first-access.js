@@ -5,8 +5,14 @@ $('.form-first-access').submit(function( event ){
     let id = params.get('id');
 
     var password = $('.password').val();
-    if($(".password").val() != $(".password-confirm").val()){
-        alert("As senhas não conferem!");
+    var confirmPassword = $(".password-confirm").val();
+
+    if(password == "" || confirmPassword == ""){
+        swal("", "Os campos senha e confirmação de senha devem ser preenchidos!", "warning");
+        return false;
+    }
+    if(password != confirmPassword){
+        swal("", "As senhas não conferem!", "warning");
         return false;
     }
     var user = {
