@@ -4,7 +4,6 @@ function saveNewPassword(event){
     let params = new URLSearchParams(document.location.search.substring(1));
     let userId = Number(params.get("id"));
     let token = params.get("token");
-
     localStorage.clear();
     localStorage.setItem('token', token);
 
@@ -19,11 +18,11 @@ function saveNewPassword(event){
             password: $(".form-new-password").val(),
             id: userId
         },
-        url: 'http://localhost:4000/updatePassword/' + userId,
+        url: 'https://api-5s.herokuapp.com/updatePassword/' + userId,
         success: function(data, status) {
             swal('', data.message, data.type)
             .then(() => {
-                window.location.href = "http://localhost:8080";
+                window.location.href = "https://login-5s.herokuapp.com";
             })
         },
         error: function(data, status) {
