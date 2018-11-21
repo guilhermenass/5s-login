@@ -18,11 +18,11 @@ function saveNewPassword(event){
             password: $(".form-new-password").val(),
             id: userId
         },
-        url: 'https://api-5s.herokuapp.com/updatePassword/' + userId,
+        url: 'http://localhost:4000/updatePassword/' + userId,
         success: function(data, status) {
             swal('', data.message, data.type)
             .then(() => {
-                window.location.href = "https://login-5s.herokuapp.com";
+                window.location.href = "http://localhost:8080";
             })
         },
         error: function(data, status) {
